@@ -1,0 +1,280 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: var(--Dark-grayish-blue);
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+:root{
+    /* ! PRIMARY COLORS */
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    /* ! NEUTRAL COLORS*/
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+/* ! NAVBAR */
+
+nav{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5rem;
+    padding: 0 15rem;
+}
+
+.list-items{
+    display: flex;
+    gap: 2rem;
+    transition: all 0.5s;
+}
+
+
+
+.list-items li.active,
+.list-items li:hover{
+    color: var(--Soft-orange);
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+    transform: rotate(90deg);
+    transition: all 0.3s;
+}
+
+.hamburger:hover{
+    transform: rotate(180deg);
+}
+
+/* ! MAIN */
+/* ! TOP */
+
+main{
+    margin: 5.8rem 15rem 3rem;
+}
+
+.top-container{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.top-left-container img{
+    width: 100%;
+}
+
+.text-banner-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding-top: 1rem;
+}
+
+.title-container h1{
+    color: var(--Very-dark-blue);
+    font-size: 2.7rem;
+    font-weight: 800;
+}
+
+
+.desc-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.desc-container button{
+    border: none;
+    background-color: var(--Soft-red);
+    color: white;
+    padding: 1rem 2rem;
+    letter-spacing: 0.3rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.desc-container button:hover{
+    background-color: var(--Very-dark-blue);
+}
+
+.top-right-container{
+    background-color: var(--Very-dark-blue);
+    padding: 1.7rem;
+}
+
+.top-right-container h1{
+    color: var(--Soft-orange);
+}
+
+.item{
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--Dark-grayish-blue);
+}
+
+.item:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.top-right-container h4{
+    color: white;
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+}
+
+.top-right-container h4:hover{
+    color: var(--Soft-orange);
+}
+
+.top-right-container p{
+    font-size: 0.9rem;
+}
+
+/* ! ARTICLE (BOTTOM) */
+
+.article-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    width: auto;
+}
+
+.article-item{
+    display: flex;
+    gap: 1rem;
+}
+
+.article-desc-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.article-container img{
+    width: 5rem;
+}
+
+.article-container h2{
+    font-weight: 800;
+    color: var(--Grayish-blue);
+}
+
+.article-container h4{
+    color: var(--Very-dark-blue);
+    cursor: pointer;
+}
+
+.article-container h4:hover{
+    color: var(--Soft-red);
+}
+
+.article-container p{
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+}
+
+/* ! FOR RESPONSIVENESS */
+
+@media screen and (max-width: 1250px) {
+    nav{
+        padding: 0 8rem;
+    }
+
+    main{
+        margin: 5.8rem 8rem 2rem;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    nav{
+        padding: 0 2rem;
+    }
+
+    main{
+        margin: 5.8rem 2rem 2rem;
+    }
+
+    .top-container{
+        grid-template-columns: 1fr;
+    }
+
+    .article-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .text-banner-container{
+        grid-template-columns: 1fr;
+    }
+
+    .article-container{
+        grid-template-columns: 1fr;
+    }
+
+    /* ! FOR HAMBURGER NAV */
+    .hamburger{
+        display: block;
+        position: absolute;
+        right: 2rem;
+    }
+
+    .list-items{
+        /* display: none; */
+        gap: 0;
+        font-size: 1.2rem;
+        background-color: white;
+        position: fixed;
+        flex-direction: column;
+        top: 0;
+        right: -60vw;
+        width: 60vw;
+        min-height: 100vh;
+        padding: 6rem 0 0 0;
+        opacity: 0;
+    }
+
+    .list-items.active{
+        opacity: 1;
+        right: 0;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    }
+
+    .list-items a{
+        padding: 1rem 0 1rem 2rem;
+    }
+
+
+    .list-items.active li,
+    .list-items li{
+        pointer-events: none;
+    }
+
+    .list-items a:hover{
+        background-color: var(--Very-dark-blue);
+    }
+
+}
+
+
+
+
